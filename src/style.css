@@ -1,88 +1,96 @@
-h1{
+h1 {
     padding: 10px;
+    font-size: 44px;
 }
+
 .degrees {
     font-size: 34px;
 }
 
-.details{
+.details {
     list-style: none;
     background-color: #fff;
     padding: 5px;
     position: fixed;
-    left: 310px;;
-    top: 250px;
+    left: 310px;
+    top: 210px;
     font-size: 9px;
     font-family: Helvetica;
 }
+
 body {
     background: radial-gradient(592px at 48.2% 50%,
             rgba(255, 255, 249, 0.6) 0%,
-            rgb(160, 199, 254) 74.6%)      
+            rgb(160, 199, 254) 74.6%);
 }
+
 .weather-card {
     margin: 30px auto;
     padding: 20px;
     max-width: 900px;
     border-radius: 30px;
     border: 1px solid lightskyblue;
-    height:max-content;
-    background:radial-gradient(592px at 48.2% 50%,
-                rgba(255, 255, 249, 0.6) 0%,
-                rgb(160, 199, 254) 74.6%);
+    height: max-content;
+    background: radial-gradient(592px at 48.2% 50%,
+            rgba(255, 255, 249, 0.6) 0%,
+            rgb(160, 199, 254) 74.6%);
     transform: perspective(1000px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.sun{
+
+.sun {
     font-size: 40px;
     color: yellow;
 }
-.cloud{
+
+.cloud {
     font-size: 40px;
     color: white;
 }
-.wind{
+
+.wind {
     font-size: 40px;
-    color:white;
+    color: white;
 }
-.city{
+
+.city {
     list-style: none;
     position: fixed;
     left: 580px;
     top: 120px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 15px;
     font-weight: normal;
     color: rgb(10, 10, 10);
     padding: 5px;
 }
-.town{
-    font-size: 34px;
+
+.town {
+    font-size: 44px;
     font-weight: bold;
     color: white;
-
 }
-.temperature{
-    display: inline;
+
+.temperature {
+    display: flex;
     margin: 0 10px;
-    padding: 10px;
-    color: green;
+    color: black;
     text-decoration: double;
     text-shadow: 10px;
     font-style: oblique;
-    font-weight: bold;
-    
+    font-size: 10px;
 }
-.long-line{
+
+.long-line {
     width: 70%;
     border-bottom: 1px solid black;
-    
 }
-.line::after{
+
+.line::after {
     position: absolute;
     content: "weather.com .Feedback";
     right: 10px;
-    font-size: .8em;
+    font-size: 0.8em;
     color: gray;
 }
 
