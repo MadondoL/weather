@@ -55,7 +55,7 @@ body {
 
 .city {
     list-style: none;
-    position: static;
+    position: absolute;
     left: 580px;
     top: 120px;
     font-family: "Times New Roman", Times, serif;
