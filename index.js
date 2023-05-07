@@ -65,11 +65,14 @@ function handleCurrentButtonClick() {
 
 // Function to update the weather display
 function updateWeather(response) {
+  let town = document.querySelector(".town");
+  town.innerHTML = response.data.name;
+
   updateTemperature(response);
   updateDate();
-  updatePrecipitation(response)
-  updateHumidity(response)
-  updateWindSpeed(response)
+  updatePrecipitation(response);
+  updateHumidity(response);
+  updateWindSpeed(response);
 }
 
 // Add event listener to the form
