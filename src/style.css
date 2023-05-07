@@ -56,7 +56,7 @@ body {
 .city {
     list-style: none;
     position: absolute;
-    left: 580px;
+    left: 450px;
     top: 120px;
     font-family: "Times New Roman", Times, serif;
     font-size: 15px;
@@ -85,7 +85,7 @@ body {
 
 .long-line {
     width: 70%;
-    border-bottom: 1px solid black;
+    
 }
 
 .line::after {
