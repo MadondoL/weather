@@ -1,3 +1,19 @@
+body {
+    background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%);
+}
+
+.weather-card {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 900px;
+    border-radius: 30px;
+    border: 1px solid lightskyblue;
+    height: max-content;
+    background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%);
+    transform: perspective(1000px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 h1 {
     padding: 10px;
     font-size: 44px;
@@ -16,26 +32,6 @@ h1 {
     top: 210px;
     font-size: 9px;
     font-family: Helvetica;
-}
-
-body {
-    background: radial-gradient(592px at 48.2% 50%,
-            rgba(255, 255, 249, 0.6) 0%,
-            rgb(160, 199, 254) 74.6%);
-}
-
-.weather-card {
-    margin: 30px auto;
-    padding: 20px;
-    max-width: 900px;
-    border-radius: 30px;
-    border: 1px solid lightskyblue;
-    height: max-content;
-    background: radial-gradient(592px at 48.2% 50%,
-            rgba(255, 255, 249, 0.6) 0%,
-            rgb(160, 199, 254) 74.6%);
-    transform: perspective(1000px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .sun {
@@ -69,7 +65,7 @@ body {
     font-size: 44px;
     font-weight: bold;
     color: white;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
 
