@@ -90,7 +90,7 @@ body {
 
 .line::after {
     position: absolute;
-    content: href="https://github.com/MadondoL/weather" "source-code by Lungile";
+    content:"source-code by Lungile";
     right: 10px;
     font-size: 0.8em;
     color: gray;
