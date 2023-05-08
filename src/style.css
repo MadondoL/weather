@@ -90,11 +90,23 @@ body {
 
 .line::after {
     position: absolute;
-    content:"source-code by Lungile";
-    hyphenate-character: "https: //github.com/MadondoL/weather";
+    content: "source-code by Lungile";
     right: 10px;
     font-size: 0.8em;
     color: gray;
+}
+
+.line::after a {
+    content: "";
+    display: block;
+    text-decoration: none;
+}
+
+.line::after a::before {
+    content: "https://github.com/MadondoL/weather";
+    display: inline;
+    white-space: nowrap;
+    text-decoration: underline;
 }
 
 .btn {
