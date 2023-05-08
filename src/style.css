@@ -90,26 +90,17 @@ body {
 
 .line::after {
     position: absolute;
-    content: "source-code by Lungile";
+    content: "Lulu's WeatherApp";
     right: 10px;
     font-size: 0.8em;
     color: gray;
 }
 
-.line::after a {
-    content: "";
-    display: block;
-    text-decoration: none;
-}
-
-.line::after a::before {
-    content: "https://github.com/MadondoL/weather";
-    display: inline;
-    white-space: nowrap;
-    text-decoration: underline;
-}
-
 .btn {
     margin-right: 15px;
+}
+.linklulu{
+    font-size: 10px;
+    text-align: left;
 }
 
