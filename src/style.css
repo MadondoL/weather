@@ -99,7 +99,8 @@ body {
 .btn {
     margin-right: 15px;
 }
-.left {
-    float: right;
+
+.lululink{
+    float: inline-start;
 }
 
