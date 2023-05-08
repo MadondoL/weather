@@ -91,6 +91,7 @@ body {
 .line::after {
     position: absolute;
     content:"source-code by Lungile";
+    hyphenate-character: "https: //github.com/MadondoL/weather";
     right: 10px;
     font-size: 0.8em;
     color: gray;
@@ -100,6 +101,3 @@ body {
     margin-right: 15px;
 }
 
-.linkcode{
-    font-size: 10px;
-}
