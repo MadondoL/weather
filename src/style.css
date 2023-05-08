@@ -101,6 +101,6 @@ body {
 }
 .linklulu{
     font-size: 10px;
-    left: 50px;
+    float: left;
 }
 
