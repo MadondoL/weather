@@ -78,6 +78,7 @@ function updateWeather(response) {
   updatePrecipitation(response);
   updateHumidity(response);
   updateWindSpeed(response);
+  changeIcon(response);
 }
 
 // Add event listener to the form
