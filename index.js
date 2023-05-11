@@ -5,10 +5,12 @@ function updateTemperature(response) {
   temperatureElement.innerHTML = `${roundtemp}°C`;
 }
 
-function changeIcon(response){
-let iconElement = document.querySelector("#icon");
-iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${response.data.weather.icon}@2x.png`);
+function changeIcon(response) {
+  let iconElement = document.querySelector("#icon");
+  let iconUrl = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+  iconElement.setAttribute("src", iconUrl);
 }
+
 // update Precipitation
 
 function updatePrecipitation(response){
