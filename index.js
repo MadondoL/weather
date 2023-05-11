@@ -4,13 +4,13 @@ function updateTemperature(response) {
   let temperatureElement = document.querySelector("#display-temperature");
   temperatureElement.innerHTML = `${roundtemp}°C`;
 }
-
 function changeIcon(response) {
   let iconElement = document.querySelector("#icon");
-  let iconCode = response.data.condition.icon;
+  let iconCode = response.data.weather[0].icon;
   let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
   iconElement.setAttribute("src", iconUrl);
 }
+
 
 // update Precipitation
 
@@ -19,18 +19,19 @@ function updatePrecipitation(response){
   let precipitationElement = document.querySelector("#precipitation");
   precipitationElement.innerHTML = `${roundpre} %`;
 }
-// update humidity
+
 function updateHumidity(response){
   let roundhumid = Math.round(response.data.main.humidity);
   let humidElement = document.querySelector("#humid")
   humidElement.innerHTML = `${roundhumid} %`
 }
-// update wind speed
+
 function updateWindSpeed(response){
-  let roundwind = Math.round(response.wind.speed);
+  let roundwind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#windy");
   windElement.innerHTML = `${roundwind} km/h`
 }
+
 // Function to update the date and time
 function updateDate() {
   let now = new Date();
