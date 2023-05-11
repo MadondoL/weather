@@ -7,7 +7,8 @@ function updateTemperature(response) {
 
 function changeIcon(response) {
   let iconElement = document.querySelector("#icon");
-  let iconUrl = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+  let iconCode = response.data.weather[0].icon;
+  let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
   iconElement.setAttribute("src", iconUrl);
 }
 
