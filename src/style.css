@@ -8,11 +8,11 @@ h1 {
     margin-top: 20px;
 }
 .forecast-date{
-    font-size: 16px;
+    font-size: 20px;
     opacity: o.6;
 }
 .days-temperature{
-    font-size: 13px;
+    font-size: 14px;
 }
 .tempMin{
     opacity: 0.6;
