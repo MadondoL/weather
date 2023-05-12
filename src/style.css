@@ -9,9 +9,13 @@ h1 {
 }
 .forecast-date{
     font-size: 16px;
+    opacity: o.6;
 }
 .days-temperature{
     font-size: 13px;
+}
+.tempMin{
+    opacity: 0.6;
 }
 .degrees {
     font-size: 34px;
