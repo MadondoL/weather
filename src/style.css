@@ -105,14 +105,6 @@ body {
     
 }
 
-.line::after {
-    position: absolute;
-    content: "Lulu's WeatherApp";
-    right: 10px;
-    font-size: 0.8em;
-    color: gray;
-}
-
 .btn {
     margin-right: 15px;
 }
