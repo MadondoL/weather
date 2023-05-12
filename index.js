@@ -57,7 +57,7 @@ function displayForecast(){
                 />
                 <div class=" days-temperature">
                   <span class="tempMax">23°</span>
-                  <span calss="tempMin">19°</span>
+                  <span class="tempMin">19°</span>
                 </div>
               </div>
               </div>`;
@@ -66,7 +66,6 @@ function displayForecast(){
    forecastHTML = forecastHTML + `</div>`
  forecastElement.innerHTML = forecastHTML;
 }
-
 // Function to update the weather based on city input
 function getWeatherByCity(city) {
   let apiKey = "e0993610d858f5529b5b4f6a32da6070";
