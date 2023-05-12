@@ -76,8 +76,10 @@ function handleCurrentButtonClick() {
 
 function showFarenheitTemp(event){
   event.preventDefault();
-  let farehietValue = (celsuisTemp * 9/5) + 32;
   let temperatureElement = document.querySelector("#display-temperature");
+  celsiusElement.classList.remove("active");
+  farenheitElement.classList.add("notActive");
+  let farehietValue = (celsuisTemp * 9/5) + 32;
   temperatureElement.innerHTML = Math.round(farehietValue);
 }
 
