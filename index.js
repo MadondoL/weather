@@ -2,7 +2,7 @@
 function updateTemperature(response) {
   let roundtemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#display-temperature");
-  temperatureElement.innerHTML = `${roundtemp}°C`;
+  temperatureElement.innerHTML = `${roundtemp}`;
 }
 function changeIcon(response) {
   let iconElement = document.querySelector("#icon");
