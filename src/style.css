@@ -103,6 +103,9 @@ body {
 .lululink{
     text-align: center;
 }
+.lululink :hover{
+    text-decoration: none;
+}
 
 .units{
     font-size: 20px;
