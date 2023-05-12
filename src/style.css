@@ -17,6 +17,9 @@ h1 {
 .tempMin{
     opacity: 0.6;
 }
+.tempMax{
+    font-weight: bold;
+}
 .degrees {
     font-size: 34px;
 }
