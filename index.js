@@ -72,6 +72,14 @@ function handleCurrentButtonClick() {
   navigator.geolocation.getCurrentPosition(getWeatherByPosition);
 }
 
+function showFarenheitTemp(event){
+  event.preventDefault();
+  alert("link clicked")
+}
+
+let farenheitElement = document.querySelector("#farenheit");
+farenheitElement.addEventListener("click", showFarenheitTemp)
+
 // Function to update the weather display
 function updateWeather(response) {
   let town = document.querySelector(".town");
