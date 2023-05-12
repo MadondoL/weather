@@ -4,7 +4,7 @@ h1 {
 }
 
 h2{
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .degrees {
@@ -60,7 +60,7 @@ body {
 .city {
     list-style: none;
     position: absolute;
-    left: 250px;
+    left: 280px;
     top: 95px;
     font-family: "Times New Roman", Times, serif;
     font-size: 15px;
