@@ -77,7 +77,7 @@ function showFarenheitTemp(event){
   alert("link clicked")
 }
 
-let farenheitElement = document.querySelector("#farenheit");
+let farenheitElement = document.querySelector("#farenheits");
 farenheitElement.addEventListener("click", showFarenheitTemp)
 
 // Function to update the weather display
