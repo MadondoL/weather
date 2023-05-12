@@ -81,6 +81,11 @@ function showFarenheitTemp(event){
   temperatureElement.innerHTML = Math.round(farehietValue);
 }
 
+function showCelsiusTemp(event){
+  event.preventDefault()
+  let temperatureElement = document.querySelector("#display-temperature");
+  temperatureElement.innerHTML = Math.round(celsuisTemp)
+}
 
 
 // Function to update the weather display
@@ -98,6 +103,10 @@ function updateWeather(response) {
 }
 
 let celsuisTemp = null;
+
+// add event listner celsius
+let celsiusElement = document.querySelector("#celsius-link");
+celsiusElement.addEventListener("click", showCelsiusTemp)
 // add farenheits 
 
 let farenheitElement = document.querySelector("#farenheits");
