@@ -125,9 +125,9 @@ function updateWeather(response) {
   updateWindSpeed(response);
   changeIcon(response);
   showFarenheitTemp()
-  displayForecast()
+  
 }
-
+displayForecast()
 let celsuisTemp = null;
 
 // add event listner celsius
