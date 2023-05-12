@@ -3,6 +3,8 @@ function updateTemperature(response) {
   let roundtemp = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#display-temperature");
   temperatureElement.innerHTML = `${roundtemp}`;
+
+  celsuisTemp = response.data.main.temp;
 }
 function changeIcon(response) {
   let iconElement = document.querySelector("#icon");
@@ -74,13 +76,12 @@ function handleCurrentButtonClick() {
 
 function showFarenheitTemp(event){
   event.preventDefault();
-  let farehietValue = (14 * 9/5) + 32;
-
-  alert(farehietValue)
+  let farehietValue = (celsuisTemp * 9/5) + 32;
+  let temperatureElement = document.querySelector("#display-temperature");
+  temperatureElement.innerHTML = Math.round(farehietValue);
 }
 
-let farenheitElement = document.querySelector("#farenheits");
-farenheitElement.addEventListener("click", showFarenheitTemp)
+
 
 // Function to update the weather display
 function updateWeather(response) {
@@ -93,7 +94,14 @@ function updateWeather(response) {
   updateHumidity(response);
   updateWindSpeed(response);
   changeIcon(response);
+  showFarenheitTemp()
 }
+
+let celsuisTemp = null;
+// add farenheits 
+
+let farenheitElement = document.querySelector("#farenheits");
+farenheitElement.addEventListener("click", showFarenheitTemp)
 
 // Add event listener to the form
 let form = document.querySelector("#city-input");
