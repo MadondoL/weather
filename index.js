@@ -12,8 +12,6 @@ function changeIcon(response) {
   let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
   iconElement.setAttribute("src", iconUrl);
 }
-
-
 // update Precipitation
 
 function updatePrecipitation(response){
@@ -77,6 +75,8 @@ function handleCurrentButtonClick() {
 function showFarenheitTemp(event){
   event.preventDefault();
   let temperatureElement = document.querySelector("#display-temperature");
+  celsiusElement.classList.remove("active");
+  farenheitElement.classList.add("active");
   let farehietValue = (celsuisTemp * 9/5) + 32;
   temperatureElement.innerHTML = Math.round(farehietValue);
 }
@@ -84,6 +84,8 @@ function showFarenheitTemp(event){
 function showCelsiusTemp(event){
   event.preventDefault()
   let temperatureElement = document.querySelector("#display-temperature");
+  celsiusElement.classList.add("active")
+  farenheitElement.classList.remove("active")
   temperatureElement.innerHTML = Math.round(celsuisTemp)
 }
 
