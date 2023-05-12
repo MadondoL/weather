@@ -74,7 +74,9 @@ function handleCurrentButtonClick() {
 
 function showFarenheitTemp(event){
   event.preventDefault();
-  alert("link clicked")
+  let farehietValue = (14 * 9/5) + 32;
+
+  alert(farehietValue)
 }
 
 let farenheitElement = document.querySelector("#farenheits");
