@@ -114,10 +114,6 @@ body {
     cursor: default;
 }
 
-.units .active :hover {
-   text-decoration: none;
-}
-
-.units .notActive :hover{
+.units :hover{
     text-decoration: none;
 }
