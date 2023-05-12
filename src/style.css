@@ -102,7 +102,6 @@ body {
 
 .lululink{
     text-align: center;
-    text-decoration: none;
 }
 .lululink :hover{
     text-decoration: none;
@@ -120,5 +119,8 @@ body {
 }
 
 .units :hover{
+    text-decoration: none;
+}
+a{
     text-decoration: none;
 }
