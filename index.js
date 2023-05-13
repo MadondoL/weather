@@ -48,7 +48,6 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    let day = forecastDay.toLocaleDateString("en-US", { weekday: "short" });
     let iconCode = forecastDay.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
     let maxTemp = Math.round(forecastDay.temp.max);
@@ -57,7 +56,7 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML += `
         <div class="col-2">
-          <div class="forecast-date">${day}</div>
+          <div class="forecast-date">${formatDay(forecastDay.time)}</div>
           <img src="${iconUrl}" width="200" alt="forecast" />
           <div class="days-temperature">
             <span class="tempMax">${maxTemp}°</span>
@@ -70,8 +69,6 @@ function displayForecast(response) {
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-
 
 // Function to update the weather based on city input
 function getWeatherByCity(city) {
