@@ -129,7 +129,7 @@ function getForecast(coordinates) {
 
   axios.get(apiUrl).then(displayForecast);
 }
-
+getForecast(response.data.coord); 
 let celsuisTemp = null;
 
 // add event listner celsius
@@ -147,5 +147,4 @@ form.addEventListener("submit", handleFormSubmit);
 // Add event listener to the "current" button
 let button = document.querySelector("#current");
 button.addEventListener("click", handleCurrentButtonClick);
- getForecast(response.data.coord); 
 displayForecast();
