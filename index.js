@@ -162,3 +162,4 @@ form.addEventListener("submit", handleFormSubmit);
 // Add event listener to the "current" button
 let button = document.querySelector("#current");
 button.addEventListener("click", handleCurrentButtonClick);
+displayForecast(forecastData);
