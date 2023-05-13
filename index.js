@@ -119,7 +119,7 @@ function updateWeather(response) {
   updateWindSpeed(response);
   changeIcon(response);
   showFarenheitTemp(event);
-   getForecast(response.data.coord); 
+  
 }
 
 // Function to get the weather forecast
@@ -147,4 +147,5 @@ form.addEventListener("submit", handleFormSubmit);
 // Add event listener to the "current" button
 let button = document.querySelector("#current");
 button.addEventListener("click", handleCurrentButtonClick);
+ getForecast(response.data.coord); 
 displayForecast();
