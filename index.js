@@ -60,7 +60,10 @@ function displayForecast() {
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+function getForecast(coordinates){
+  console.log(coordinates)
 
+}
 // Function to update the weather based on city input
 function getWeatherByCity(city) {
   let apiKey = "e0993610d858f5529b5b4f6a32da6070";
@@ -120,7 +123,7 @@ function updateWeather(response) {
   updateWindSpeed(response);
   changeIcon(response);
   showFarenheitTemp()
-  
+ getForecast(response.data.coords) 
 }
 
 let celsuisTemp = null;
