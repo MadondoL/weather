@@ -43,12 +43,12 @@ function updateDate() {
   li.textContent = `${day}, ${hour}:${minutes}`;
 }
 function displayForecast(response) {
+  console.log(forecast)
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
     forecast.forEach(function (forecastDay) {
-      console.log(forecastDay)
     let day = forecastDay.toLocaleDateString("en-US", { weekday: "short" }); // Get short weekday name
     let iconCode = forecastDay.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
