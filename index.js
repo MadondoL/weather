@@ -43,33 +43,34 @@ function updateDate() {
   li.textContent = `${day}, ${hour}:${minutes}`;
 }
 function displayForecast(response) {
-  console.log(forecast)
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
-    forecast.forEach(function (forecastDay, index) {
-    let day = forecastDay.toLocaleDateString("en-US", { weekday: "short" }); // Get short weekday name
+  forecast.forEach(function (forecastDay, index) {
+    let day = forecastDay.toLocaleDateString("en-US", { weekday: "short" });
     let iconCode = forecastDay.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
     let maxTemp = Math.round(forecastDay.temp.max);
     let minTemp = Math.round(forecastDay.temp.min);
-     if (index < 6){
+
+    if (index < 6) {
       forecastHTML += `
-      <div class="col-2">
-        <div class="forecast-date">${day}</div>
-        <img src="${iconUrl}" width="200" alt="forecast" />
-        <div class="days-temperature">
-          <span class="tempMax">${maxTemp}°</span>
-          <span class="tempMin">${minTemp}°</span>
-        </div>
-      </div>`;
-     }    
+        <div class="col-2">
+          <div class="forecast-date">${day}</div>
+          <img src="${iconUrl}" width="200" alt="forecast" />
+          <div class="days-temperature">
+            <span class="tempMax">${maxTemp}°</span>
+            <span class="tempMin">${minTemp}°</span>
+          </div>
+        </div>`;
+    }
   });
 
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 
 
 // Function to update the weather based on city input
