@@ -42,11 +42,12 @@ function updateDate() {
   let day = days[now.getDay()];
   li.textContent = `${day}, ${hour}:${minutes}`;
 }
-function displayForecast(forecastData) {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
-  forecastData.forEach(function (forecastDay) {
+    forecast.forEach(function (forecastDay) {
     let day = forecastDay.toLocaleDateString("en-US", { weekday: "short" }); // Get short weekday name
     let iconCode = forecastDay.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
@@ -140,8 +141,8 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(function (response) {
-   let forecastData = response.data.daily; //Extract forecast data from the response
-    displayForecast(forecastData); // Pass the forecast data to the displayForecast function
+   let forecast = response.data.daily; //Extract forecast data from the response
+    displayForecast(forecast); // Pass the forecast data to the displayForecast function
   });
 }
 
