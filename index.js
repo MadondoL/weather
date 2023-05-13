@@ -42,6 +42,14 @@ function updateDate() {
   let day = days[now.getDay()];
   li.textContent = `${day}, ${hour}:${minutes}`;
 }
+
+function formatDay(timestamp){
+  let date = new Date(timestamp* 1000);
+  let day = date.getDay();
+  let days =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return days[day]
+}
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -56,7 +64,7 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML += `
         <div class="col-2">
-          <div class="forecast-date">${formatDay(forecastDay.time)}</div>
+          <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
           <img src="${iconUrl}" width="200" alt="forecast" />
           <div class="days-temperature">
             <span class="tempMax">${maxTemp}°</span>
@@ -101,7 +109,7 @@ function handleCurrentButtonClick() {
 }
 
 function showFarenheitTemp(event){
-  event.preventDefault();
+   event.preventDefault();
   let temperatureElement = document.querySelector("#display-temperature");
   celsiusElement.classList.remove("active");
   farenheitElement.classList.add("active");
