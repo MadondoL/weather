@@ -120,7 +120,7 @@ function updateWeather(response) {
   updateWindSpeed(response);
   changeIcon(response);
   showFarenheitTemp(event);
-  getForecast(response.data.coords)
+  getForecast(response.data.coord)
 }
 
 // Function to get the weather forecast
