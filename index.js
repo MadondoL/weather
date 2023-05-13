@@ -48,6 +48,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
     forecast.forEach(function (forecastDay) {
+      console.log(forecastDay)
     let day = forecastDay.toLocaleDateString("en-US", { weekday: "short" }); // Get short weekday name
     let iconCode = forecastDay.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
@@ -130,7 +131,7 @@ function updateWeather(response) {
   updateWindSpeed(response);
   changeIcon(response);
   showFarenheitTemp(event);
-  getForecast(response)
+  getForecast(response.data.coord)
 }
 
 // Function to get the weather forecast
