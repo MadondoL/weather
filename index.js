@@ -86,6 +86,7 @@ function getWeatherByPosition(position) {
   axios.get(apiUrl).then(updateWeather);
 }
 
+
 // Function to handle the form submission
 function handleFormSubmit(event) {
   event.preventDefault();
