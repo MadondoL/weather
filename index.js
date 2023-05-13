@@ -133,14 +133,14 @@ function updateWeather(response) {
 
 // Function to get the weather forecast
 function getForecast(coordinates) {
-  let forecastData = response.data.daily; 
+  
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(function (response) {
-   // Extract forecast data from the response
+   let forecastData = response.data.daily; //Extract forecast data from the response
     displayForecast(forecastData); // Pass the forecast data to the displayForecast function
   });
 }
