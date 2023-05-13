@@ -94,7 +94,6 @@ function handleFormSubmit(event) {
   let town = document.querySelector(".town");
   town.textContent = `${city}`
   getWeatherByCity(city);
-
 }
 // Function to handle the "current" button click
 function handleCurrentButtonClick() {
@@ -129,7 +128,7 @@ function updateWeather(response) {
   updateHumidity(response);
   updateWindSpeed(response);
   changeIcon(response);
-  showFarenheitTemp(event);
+  showFarenheitTemp();
   getForecast(response.data.coord)
 }
 
