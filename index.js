@@ -5,6 +5,7 @@ function updateTemperature(response) {
   temperatureElement.innerHTML = `${roundtemp}`;
 
   celsuisTemp = response.data.main.temp;
+  getForecast(response.data.coord); 
 }
 function changeIcon(response) {
   let iconElement = document.querySelector("#icon");
@@ -119,7 +120,6 @@ function updateWeather(response) {
   updateWindSpeed(response);
   changeIcon(response);
   showFarenheitTemp();
-  getForecast(response.data.coord); // Fixed the property name from "coords" to "coord"
 }
 
 // Function to get the weather forecast
