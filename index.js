@@ -48,14 +48,14 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
-    forecast.forEach(function (forecastDay) {
+    forecast.forEach(function (forecastDay, index) {
     let day = forecastDay.toLocaleDateString("en-US", { weekday: "short" }); // Get short weekday name
     let iconCode = forecastDay.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
     let maxTemp = Math.round(forecastDay.temp.max);
     let minTemp = Math.round(forecastDay.temp.min);
-
-    forecastHTML += `
+     if (index < 6){
+      forecastHTML += `
       <div class="col-2">
         <div class="forecast-date">${day}</div>
         <img src="${iconUrl}" width="200" alt="forecast" />
@@ -64,6 +64,7 @@ function displayForecast(response) {
           <span class="tempMin">${minTemp}°</span>
         </div>
       </div>`;
+     }    
   });
 
   forecastHTML += `</div>`;
