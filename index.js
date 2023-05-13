@@ -148,4 +148,4 @@ form.addEventListener("submit", handleFormSubmit);
 let button = document.querySelector("#current");
 button.addEventListener("click", handleCurrentButtonClick);
 displayForecast();
-getForecast();
+getForecast(response.data.coord);
