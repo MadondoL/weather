@@ -60,10 +60,13 @@ function displayForecast() {
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-function getForecast(coordinates){
-  console.log(coordinates)
+function getForecast(coordinates) {
+  let apiKey = "e0993610d858f5529b5b4f6a32da6070";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=current,minutely,hourly&appid=${apiKey}&units=metric`;
 
+  axios.get(apiUrl).then(displayForecast);
 }
+
 // Function to update the weather based on city input
 function getWeatherByCity(city) {
   let apiKey = "e0993610d858f5529b5b4f6a32da6070";
