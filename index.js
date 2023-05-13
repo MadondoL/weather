@@ -42,8 +42,8 @@ function updateDate() {
   let day = days[now.getDay()];
   li.textContent = `${day}, ${hour}:${minutes}`;
 }
-function displayForecast(response) {
-  let forecastNow = response.data.daily;
+function displayForecast(forecastDay) {
+  let forecastNow = forecastDay.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   
