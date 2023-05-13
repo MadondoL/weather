@@ -60,12 +60,6 @@ function displayForecast() {
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-function getForecast(coordinates) {
-  let apiKey = "e0993610d858f5529b5b4f6a32da6070";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=current,minutely,hourly&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayForecast);
-}
 
 // Function to update the weather based on city input
 function getWeatherByCity(city) {
@@ -113,7 +107,6 @@ function showCelsiusTemp(event){
   temperatureElement.innerHTML = Math.round(celsuisTemp)
 }
 
-
 // Function to update the weather display
 function updateWeather(response) {
   let town = document.querySelector(".town");
@@ -125,8 +118,16 @@ function updateWeather(response) {
   updateHumidity(response);
   updateWindSpeed(response);
   changeIcon(response);
-  showFarenheitTemp()
- getForecast(response.data.coords) 
+  showFarenheitTemp();
+  getForecast(response.data.coord); // Fixed the property name from "coords" to "coord"
+}
+
+// Function to get the weather forecast
+function getForecast(coordinates) {
+  let apiKey = "e0993610d858f5529b5b4f6a32da6070";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=current,minutely,hourly&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 let celsuisTemp = null;
