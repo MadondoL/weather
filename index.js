@@ -119,7 +119,7 @@ function updateWeather(response) {
   updateHumidity(response);
   updateWindSpeed(response);
   changeIcon(response);
-  showFarenheitTemp();
+  showFarenheitTemp(event);
 }
 
 // Function to get the weather forecast
