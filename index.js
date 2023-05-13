@@ -47,8 +47,7 @@ function displayForecast(forecastData) {
   let forecastHTML = `<div class="row">`;
 
   forecastData.forEach(function (forecastDay) {
-    let forecastDate = new Date(forecastDay.dt * 1000); // Convert timestamp to date
-    let day = forecastDate.toLocaleDateString("en-US", { weekday: "short" }); // Get short weekday name
+    let day = forecastDay.toLocaleDateString("en-US", { weekday: "short" }); // Get short weekday name
     let iconCode = forecastDay.weather[0].icon;
     let iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
     let maxTemp = Math.round(forecastDay.temp.max);
@@ -134,13 +133,14 @@ function updateWeather(response) {
 
 // Function to get the weather forecast
 function getForecast(coordinates) {
+  let forecastData = response.data.daily; 
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(function (response) {
-    let forecastData = response.data.daily; // Extract forecast data from the response
+   // Extract forecast data from the response
     displayForecast(forecastData); // Pass the forecast data to the displayForecast function
   });
 }
@@ -162,4 +162,3 @@ form.addEventListener("submit", handleFormSubmit);
 // Add event listener to the "current" button
 let button = document.querySelector("#current");
 button.addEventListener("click", handleCurrentButtonClick);
-displayForecast(forecastData);
