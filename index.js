@@ -14,22 +14,22 @@ function changeIcon(response) {
 }
 // update Precipitation
 
-function updatePrecipitation(response){
+function updatePrecipitation(response) {
   let roundpre = Math.round(response.data.clouds.all);
   let precipitationElement = document.querySelector("#precipitation");
   precipitationElement.innerHTML = `${roundpre} %`;
 }
 
-function updateHumidity(response){
+function updateHumidity(response) {
   let roundhumid = Math.round(response.data.main.humidity);
-  let humidElement = document.querySelector("#humid")
-  humidElement.innerHTML = `${roundhumid} %`
+  let humidElement = document.querySelector("#humid");
+  humidElement.innerHTML = `${roundhumid} %`;
 }
 
-function updateWindSpeed(response){
+function updateWindSpeed(response) {
   let roundwind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#windy");
-  windElement.innerHTML = `${roundwind} km/h`
+  windElement.innerHTML = `${roundwind} km/h`;
 }
 
 // Function to update the date and time
@@ -38,20 +38,28 @@ function updateDate() {
   let li = document.querySelector(".day");
   let hour = now.getHours().toString().padStart(2, "0");
   let minutes = now.getMinutes().toString().padStart(2, "0");
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = days[now.getDay()];
   li.textContent = `${day}, ${hour}:${minutes}`;
 }
 
-function formatDay(timestamp){
-  let date = new Date(timestamp* 1000);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  return days[day]
+  return days[day];
 }
 function displayForecast(response) {
-  let forecast = response.data.daily;
+  let forecast = response;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
@@ -94,13 +102,12 @@ function getWeatherByPosition(position) {
   axios.get(apiUrl).then(updateWeather);
 }
 
-
 // Function to handle the form submission
 function handleFormSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-value").value;
   let town = document.querySelector(".town");
-  town.textContent = `${city}`
+  town.textContent = `${city}`;
   getWeatherByCity(city);
 }
 // Function to handle the "current" button click
@@ -108,21 +115,21 @@ function handleCurrentButtonClick() {
   navigator.geolocation.getCurrentPosition(getWeatherByPosition);
 }
 
-function showFarenheitTemp(event){
-   event.preventDefault();
+function showFarenheitTemp(event) {
+  event.preventDefault();
   let temperatureElement = document.querySelector("#display-temperature");
   celsiusElement.classList.remove("active");
   farenheitElement.classList.add("active");
-  let farehietValue = (celsuisTemp * 9/5) + 32;
+  let farehietValue = (celsuisTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(farehietValue);
 }
 
-function showCelsiusTemp(event){
-  event.preventDefault()
+function showCelsiusTemp(event) {
+  event.preventDefault();
   let temperatureElement = document.querySelector("#display-temperature");
-  celsiusElement.classList.add("active")
-  farenheitElement.classList.remove("active")
-  temperatureElement.innerHTML = Math.round(celsuisTemp)
+  celsiusElement.classList.add("active");
+  farenheitElement.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsuisTemp);
 }
 
 // Function to update the weather display
@@ -136,20 +143,20 @@ function updateWeather(response) {
   updateHumidity(response);
   updateWindSpeed(response);
   changeIcon(response);
-  showFarenheitTemp();
-  getForecast(response.data.coord)
+  celsiusElement.classList.add("active");
+  farenheitElement.classList.remove("active");
+  getForecast(response.data.coord);
 }
 
 // Function to get the weather forecast
 function getForecast(coordinates) {
-  
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
 
   axios.get(apiUrl).then(function (response) {
-   let forecast = response.data.daily; //Extract forecast data from the response
+    let forecast = response.data.daily; //Extract forecast data from the response
     displayForecast(forecast); // Pass the forecast data to the displayForecast function
   });
 }
@@ -158,11 +165,11 @@ let celsuisTemp = null;
 
 // add event listner celsius
 let celsiusElement = document.querySelector("#celsius-link");
-celsiusElement.addEventListener("click", showCelsiusTemp)
-// add farenheits 
+celsiusElement.addEventListener("click", showCelsiusTemp);
+// add farenheits
 
 let farenheitElement = document.querySelector("#farenheits");
-farenheitElement.addEventListener("click", showFarenheitTemp)
+farenheitElement.addEventListener("click", showFarenheitTemp);
 
 // Add event listener to the form
 let form = document.querySelector("#city-input");
