@@ -73,7 +73,7 @@ function displayForecast(response) {
       forecastHTML += `
         <div class="col-2">
           <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
-          <img src="${iconUrl}" width="200" alt="forecast" />
+          <img src="${iconUrl}" width="50" alt="forecast" />
           <div class="days-temperature">
             <span class="tempMax">${maxTemp}°</span>
             <span class="tempMin">${minTemp}°</span>
@@ -153,7 +153,7 @@ function getForecast(coordinates) {
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(function (response) {
     let forecast = response.data.daily; //Extract forecast data from the response
