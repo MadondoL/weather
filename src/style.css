@@ -56,21 +56,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.sun {
-    font-size: 40px;
-    color: yellow;
-}
-
-.cloud {
-    font-size: 40px;
-    color: white;
-}
-
-.wind {
-    font-size: 40px;
-    color: white;
-}
-
 .city {
     list-style: none;
     position: absolute;
@@ -104,6 +89,9 @@ body {
 .long-line {
     width: 70%;
     
+}
+.search{
+    margin-right: 10px;
 }
 
 .btn {
