@@ -8,6 +8,7 @@ h1 {
     text-align: center;
     margin-top: 20px;
     justify-content: space-between;
+    flex:1;
 }
 .forecast-date{
     font-size: 20px;
