@@ -7,9 +7,8 @@ h1 {
 .weather-forecast{
     text-align: center;
     margin-top: 20px;
-    display: flex;
     justify-content: space-between;
-    flex:3;
+    flex:1;
 }
 .forecast-date{
     font-size: 20px;
