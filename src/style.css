@@ -9,7 +9,7 @@ h1 {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    flex:1;
+    flex:3;
 }
 .forecast-date{
     font-size: 20px;
