@@ -71,7 +71,7 @@ function displayForecast(response) {
 
     if (index < 6) {
       forecastHTML += `
-        <div class="col-2">
+        <div class=" d-flex col-2">
           <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
           <img src="${iconUrl}" width="50" alt="forecast" />
           <div class="days-temperature">
